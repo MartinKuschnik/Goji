@@ -3,10 +3,9 @@
   <metadata>
     <id>Goji</id>
     <version>$version$</version>
-    <title>Goji</title>
     <authors>Martin Kuschnik</authors>
     <owners>Martin Kuschnik</owners>
-    <licenseUrl>https://github.com/MartinKuschnik/Goji/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/MartinKuschnik/Goji/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/MartinKuschnik/Goji</projectUrl>
     <!--<iconUrl></iconUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
