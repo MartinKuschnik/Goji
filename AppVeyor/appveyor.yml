@@ -3,6 +3,10 @@ version: build {build}
 branches:
   only:
     - master
+	
+# scripts that run after cloning repository
+install:
+  - ps: .\AppVeyor\install_script.ps1
 
 assembly_info:
   patch: true
@@ -12,6 +16,7 @@ assembly_info:
   assembly_informational_version: "{version}"
 
 configuration: Release
+
 
 build:
   project: Goji.sln
