@@ -9,4 +9,4 @@ $content = $content -replace '\$version\$',$versionStr
 
 $content | Out-File $root\NuGet\Goji.nuspec
 
-& $root\NuGet\NuGet.exe pack $root\NuGet\Goji.nuspec
+& $root\NuGet\NuGet.exe pack $root\NuGet\Goji.nuspec -OutputDirectory $root\Goji\bin\Release\
