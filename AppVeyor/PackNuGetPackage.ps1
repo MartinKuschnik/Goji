@@ -15,7 +15,7 @@ Write-Host "Creating NuGet package..." -NoNewline
 
 & $root\AppVeyor\NuGet.exe pack $root\AppVeyor\Goji.nuspec -OutputDirectory $root\Goji\bin\Release\ -Verbosity "quiet"
 
-Get-ChildItem -Path ".\AppVeyor\Goji.*.nupkg" -File | ForEach-Object{
+Get-ChildItem -Path "$root\Goji\bin\Release\Goji.*.nupkg" -File | ForEach-Object{
     Write-Host "$($_.Name)" -ForegroundColor Green 
 }
 
