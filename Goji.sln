@@ -21,11 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{F4D3714B-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppVeyor", "AppVeyor", "{B0DB3E2E-D6CC-4995-81D9-4A7380C2F359}"
 	ProjectSection(SolutionItems) = preProject
-		AppVeyor\after_test.ps1 = AppVeyor\after_test.ps1
-		AppVeyor\appveyor.yml = AppVeyor\appveyor.yml
 		AppVeyor\Goji.nuspec = AppVeyor\Goji.nuspec
-		AppVeyor\install_script.ps1 = AppVeyor\install_script.ps1
 		AppVeyor\nuget.exe = AppVeyor\nuget.exe
+		AppVeyor\PackNuGetPackage.ps1 = AppVeyor\PackNuGetPackage.ps1
+		AppVeyor\UpdateBuildVersion.ps1 = AppVeyor\UpdateBuildVersion.ps1
 	EndProjectSection
 EndProject
 Global
