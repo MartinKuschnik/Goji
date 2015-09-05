@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A simple framework to localize wpf applications.</description>
     <copyright>Copyright 2015 Martin Kuschnik</copyright>
-    <tags>$id$ language translation localized localization globalisation wpf windows c#</tags>
+    <tags>Goji language translation localized localization globalisation wpf windows c#</tags>
   </metadata>
   <files>
     <file src="..\Goji\bin\Release\Goji.dll" target="lib\net40\" />
