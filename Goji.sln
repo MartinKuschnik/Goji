@@ -19,11 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{5928111F-F1F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{F4D3714B-3D7F-4376-BA64-647917977F8B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{B0DB3E2E-D6CC-4995-81D9-4A7380C2F359}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppVeyor", "AppVeyor", "{B0DB3E2E-D6CC-4995-81D9-4A7380C2F359}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet\Goji.nuspec = NuGet\Goji.nuspec
-		NuGet\nuget.exe = NuGet\nuget.exe
-		NuGet\pack.ps1 = NuGet\pack.ps1
+		AppVeyor\after_test.ps1 = AppVeyor\after_test.ps1
+		AppVeyor\appveyor.yml = AppVeyor\appveyor.yml
+		AppVeyor\Goji.nuspec = AppVeyor\Goji.nuspec
+		AppVeyor\install_script.ps1 = AppVeyor\install_script.ps1
+		AppVeyor\nuget.exe = AppVeyor\nuget.exe
 	EndProjectSection
 EndProject
 Global

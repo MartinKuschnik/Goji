@@ -4,9 +4,9 @@ $versionStr = "{0}.{1}.{2}.{3}" -f ($version.Major, $version.Minor, $version.Bui
 
 Write-Host "Setting .nuspec version tag to $versionStr"
 
-$content = (Get-Content $root\NuGet\Goji.nuspec) 
+$content = (Get-Content $root\AppVeyor\Goji.nuspec) 
 $content = $content -replace '\$version\$',$versionStr
 
-$content | Out-File $root\NuGet\Goji.nuspec
+$content | Out-File $root\AppVeyor\Goji.nuspec
 
-& $root\NuGet\NuGet.exe pack $root\NuGet\Goji.nuspec -OutputDirectory $root\Goji\bin\Release\
+& $root\AppVeyor\NuGet.exe pack $root\AppVeyor\Goji.nuspec -OutputDirectory $root\Goji\bin\Release\
