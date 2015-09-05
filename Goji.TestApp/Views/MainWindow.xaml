@@ -1,0 +1,108 @@
+﻿<Window x:Class="Goji.TestApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Goji.TestApp"
+        xmlns:VMs="clr-namespace:Goji.TestApp.ViewModels"
+        mc:Ignorable="d"
+        Language="{ApplicationLanguage}"
+        LocalizationProperties.TranslationProvider="resx://Goji.TestApp;Goji.TestApp.Resources.MainWindow"        
+        Title="{DynamicTranslation _mainWindowTitle}" 
+        Height="350" 
+        MinHeight="300"
+        Width="725"
+        MinWidth="700">
+    <Grid>
+        <Grid.DataContext>
+            <VMs:MainViewModel />
+        </Grid.DataContext>
+        <!-- Tabs -->
+        <TabControl>
+            <!--Basics-->
+            <TabItem Header="{DynamicTranslation _basicsItemTabHeader}">
+                <TabItem.Resources>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="FontSize" Value="15" />
+                    </Style>
+                </TabItem.Resources>
+                <StackPanel Margin="10">
+                    <TextBlock Text="{DynamicTranslation Key=_formattingDesc}"
+						Margin="5" />
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="{DynamicTranslation Key=_currentTime, StringFormat=- {0}:}" />
+                        <TextBlock Text="{Binding CurrentTime}" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="{DynamicTranslation _aNumericValue, StringFormat=- {0}:}" />
+                        <TextBlock Text="{Binding ANumericValue}" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+						Margin="5">
+                        <TextBlock Text="{DynamicTranslation _fallbackValue, StringFormat=- {0}:}" />
+                        <TextBlock Text="{DynamicTranslation undefinene translation key, FallbackValue=FallbackValue}"  Margin="10,0,0,0"  />
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+
+            <!--binding-translation-->
+            <TabItem Header="{DynamicTranslation Key=_memLeakTest}" >
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <Label Content="{DynamicTranslation _elementCount, StringFormat='\{0}:'}" />
+                        <TextBox Width="100" Text="{Binding ElementCount}" />
+                        <Button Content="{DynamicTranslation _genListElements}" Command="{Binding GenElementsCommand}" />
+                        <Button Content="{DynamicTranslation _cg}" Command="{Binding GCCommand}" />
+                    </StackPanel>
+
+                    <DataGrid ItemsSource="{Binding Elements}" AutoGenerateColumns="False" CanUserAddRows="false" >
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="33*" IsReadOnly="True">
+                                <DataGridTemplateColumn.Header>
+                                    <TextBlock Text="{DynamicTranslation _staticTranslationExtension}" LocalizationProperties.TranslationProvider="resx://Goji.TestApp;Goji.TestApp.Resources.MainWindow" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{StaticTranslation _aStaticTranslatedValue}" LocalizationProperties.TranslationProvider="resx://Goji.TestApp;Goji.TestApp.Resources.MainWindow" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="33*" IsReadOnly="True">                                
+                                <DataGridTemplateColumn.Header>
+                                    <TextBlock Text="{DynamicTranslation _dynamicTranslationExtension}" LocalizationProperties.TranslationProvider="resx://Goji.TestApp;Goji.TestApp.Resources.MainWindow" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{DynamicTranslation _aDynamicTranslatedValue}" LocalizationProperties.TranslationProvider="resx://Goji.TestApp;Goji.TestApp.Resources.MainWindow" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="34*" IsReadOnly="True">                                
+                                <DataGridTemplateColumn.Header>
+                                    <TextBlock Text="{DynamicTranslation _bindingTranslationExtension}" LocalizationProperties.TranslationProvider="resx://Goji.TestApp;Goji.TestApp.Resources.MainWindow" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{BindingTranslation {Binding Value}}" LocalizationProperties.TranslationProvider="resx://Goji.TestApp;Goji.TestApp.Resources.MainWindow" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+
+        </TabControl>
+
+        <!-- Language-Switch -->
+        <StackPanel HorizontalAlignment="Right">
+            <ComboBox Width="100" ItemsSource="{Binding Languages, Mode=OneTime}" SelectedItem="{Binding Language}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <ContentPresenter Content="{BindingTranslation Key={Binding ., Mode=OneWay}}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Window>
