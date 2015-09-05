@@ -15,4 +15,8 @@
     <copyright>Copyright 2015 Martin Kuschnik</copyright>
     <tags>$id$ language translation localized localization globalisation wpf windows c#</tags>
   </metadata>
+  <files>
+    <file src="Goji.dll" target="lib\net40\" />
+    <file src="Goji.xml" target="lib\net40\" />
+  </files>
 </package>
