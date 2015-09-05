@@ -10,3 +10,5 @@ $content = $content -replace '\$version\$',$versionStr
 $content | Out-File $root\AppVeyor\Goji.nuspec
 
 & $root\AppVeyor\NuGet.exe pack $root\AppVeyor\Goji.nuspec -OutputDirectory $root\Goji\bin\Release\
+
+Push-AppveyorArtifact Goji\bin\Release\Goji.*.nupkg
