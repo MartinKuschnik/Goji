@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>Goji</id>
     <version>$version$</version>
-    <title>$title$</title>
+    <title>Goji</title>
     <authors>Martin Kuschnik</authors>
     <owners>Martin Kuschnik</owners>
     <licenseUrl>https://github.com/MartinKuschnik/Goji/blob/master/LICENSE</licenseUrl>
@@ -15,7 +15,7 @@
     <tags>$id$ language translation localized localization globalisation wpf windows c#</tags>
   </metadata>
   <files>
-    <file src="Goji\bin\Release\Goji.dll" target="lib\net40\" />
-    <file src="Goji\bin\Release\Goji.xml" target="lib\net40\" />
+    <file src="..\Goji\bin\Release\Goji.dll" target="lib\net40\" />
+    <file src="..\Goji\bin\Release\Goji.xml" target="lib\net40\" />
   </files>
 </package>

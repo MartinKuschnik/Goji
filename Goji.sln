@@ -11,7 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		Goji.nuspec = Goji.nuspec
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -19,6 +18,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{5928111F-F1FF-4984-A350-2EC336FE7294}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{F4D3714B-3D7F-4376-BA64-647917977F8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{B0DB3E2E-D6CC-4995-81D9-4A7380C2F359}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet\Goji.nuspec = NuGet\Goji.nuspec
+		NuGet\nuget.exe = NuGet\nuget.exe
+		NuGet\pack.ps1 = NuGet\pack.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
