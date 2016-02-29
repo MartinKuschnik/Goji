@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goji", "Goji\Goji.csproj", "{F1E6BF72-6949-41B0-992F-0384D7539EA1}"
 EndProject
@@ -18,6 +18,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{5928111F-F1FF-4984-A350-2EC336FE7294}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{F4D3714B-3D7F-4376-BA64-647917977F8B}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\marti\Documents\Visual Studio 2015\Projects\Goji\doc\pics\install_nuget_package.JPG = C:\Users\marti\Documents\Visual Studio 2015\Projects\Goji\doc\pics\install_nuget_package.JPG
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppVeyor", "AppVeyor", "{B0DB3E2E-D6CC-4995-81D9-4A7380C2F359}"
 	ProjectSection(SolutionItems) = preProject
