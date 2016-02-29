@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{F4D3714B-3
 		doc\pics\added_resx_files.PNG = doc\pics\added_resx_files.PNG
 		doc\pics\ApplicationLanguage.PNG = doc\pics\ApplicationLanguage.PNG
 		doc\pics\install_nuget_package.JPG = doc\pics\install_nuget_package.JPG
+		doc\pics\set_translation_provider.png = doc\pics\set_translation_provider.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppVeyor", "AppVeyor", "{B0DB3E2E-D6CC-4995-81D9-4A7380C2F359}"
