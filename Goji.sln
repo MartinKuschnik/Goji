@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{5928111F-F1F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{F4D3714B-3D7F-4376-BA64-647917977F8B}"
 	ProjectSection(SolutionItems) = preProject
+		doc\pics\added_resx_files.PNG = doc\pics\added_resx_files.PNG
 		doc\pics\ApplicationLanguage.PNG = doc\pics\ApplicationLanguage.PNG
 		doc\pics\install_nuget_package.JPG = doc\pics\install_nuget_package.JPG
 	EndProjectSection
