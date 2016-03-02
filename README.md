@@ -41,3 +41,23 @@ Goji is licensed under The GNU GENERAL PUBLIC LICENSE v3, check the LICENSE file
 **Step 6:** Use one of the translation extensions to localize a string.
 
 &emsp;&emsp;![Static Translation](https://raw.githubusercontent.com/MartinKuschnik/Goji/master/doc/pics/static_translation.png)
+
+##Markup Extensions?
+There are a few different markup extensions which help you to localize your xaml.
+
+- ApplicationLanguage
+
+  This extension makes it very easy to synchronize the language of a control with the applicatuion language. The language of the control is automaticaly updated if you change the application language by using the extension method. ```Application.SetCurrentUICulture(CultureInfo)```.
+
+  Usage:
+  ```
+  <Control Language="{ApplicationLanguage}" />
+  ```
+
+- StaticTranslation
+
+  This is the 
+  
+- DynamicTranslation
+
+- BindingTranslation
