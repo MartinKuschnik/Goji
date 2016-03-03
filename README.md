@@ -42,22 +42,46 @@ Goji is licensed under The GNU GENERAL PUBLIC LICENSE v3, check the LICENSE file
 
 &emsp;&emsp;![Static Translation](https://raw.githubusercontent.com/MartinKuschnik/Goji/master/doc/pics/static_translation.png)
 
-##Markup Extensions?
-There are a few different markup extensions which help you to localize your xaml.
+##What does the ApplicationLanguage markup extension?
 
-- ApplicationLanguage
-
-  This extension makes it very easy to synchronize the language of a control with the applicatuion language. The language of the control is automaticaly updated if you change the application language by using the extension method. ```Application.SetCurrentUICulture(CultureInfo)```.
+This extension makes it very easy to synchronize the language of a control with the applicatuion language. The language of the control is automaticaly updated if you change the application language by using the extension method ```Application.SetCurrentUICulture(CultureInfo)```. This will update the formatting and the translations.
 
   Usage:
   ```
   <Control Language="{ApplicationLanguage}" />
   ```
+##Which kind of translation providers are supported?
+
+...
+  
+##Why multiple markup extension for translation purposes?
+
+Localizing an application will create different kinds of situations with variant requirements. Therefore there are variant markup extensions with different levels of complexity.
 
 - StaticTranslation
 
-  This is the 
+  This is the most rudimentary way to localize a text based property.
+  The translation is done only once.
+  
+  *Use Case: Use this type of translation for dialog based views which prevent the user to change the language / culture and are recreated every time.*
   
 - DynamicTranslation
 
+  This markup extension automatically triggers a retranslation when the control language has changed. 
+  
+  *Use Case: This one should be used if the displayed value should always be up to date. Use this markup extension if you are not sure whether the view stays alive during a language change.*
+  
 - BindingTranslation
+
+  The BindingTranslation is an extended version of the DynamicTranslation and  retranslates the bound key if this has changed.
+  
+  *Use Case: Use this one if you'd like to show a localized text based on an enumeration provided by the view model..*
+
+The following table should highlight the differences a bit more:
+
+|Markup Extension|Updates on language or translator changed?|Updates on translation key changed?|
+|---|---|---|
+|StaticTranslation|No |No |
+|DynamicTranslation|Yes|No |
+|BindingTranslation|Yes|Yes|
+
