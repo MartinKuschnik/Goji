@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goji", "Goji\Goji.csproj", "{F1E6BF72-6949-41B0-992F-0384D7539EA1}"
 EndProject
@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pics", "pics", "{F4D3714B-3
 	ProjectSection(SolutionItems) = preProject
 		doc\pics\added_resx_files.PNG = doc\pics\added_resx_files.PNG
 		doc\pics\ApplicationLanguage.PNG = doc\pics\ApplicationLanguage.PNG
+		doc\pics\example.gif = doc\pics\example.gif
 		doc\pics\install_nuget_package.JPG = doc\pics\install_nuget_package.JPG
 		doc\pics\set_translation_provider.png = doc\pics\set_translation_provider.png
 		doc\pics\static_translation.png = doc\pics\static_translation.png
@@ -54,5 +55,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F4D3714B-3D7F-4376-BA64-647917977F8B} = {5928111F-F1FF-4984-A350-2EC336FE7294}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DEE98A7-21AB-40D5-A8A1-8A31A9D9CA09}
 	EndGlobalSection
 EndGlobal
