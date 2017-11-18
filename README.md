@@ -1,21 +1,21 @@
 # Goji [![Build status](https://ci.appveyor.com/api/projects/status/i3w5vb5q8p19t70l?svg=true)](https://ci.appveyor.com/project/martinkuschnik/goji) [![NuGet Status](http://img.shields.io/nuget/v/Goji.svg?style=flat)](https://www.nuget.org/packages/Goji/)
 A framework to localize WPF applications.
 
-##What's Goji?
+## What's Goji?
 
 It's a framework that helps you to localize your WPF applications. Therefore it provides different kinds of markup extensions.
 
-##Are there any requirements?
+## Are there any requirements?
 
 Goji can be used for all WPF applications which targeting to the .Net  Framework 4 or any higher version. 
 
-##License
+## License
 
 Goji is licensed under The GNU GENERAL PUBLIC LICENSE v3, check the LICENSE file for details.
 
-##Installation
+## Installation
 
-##Getting Started 
+## Getting Started 
 
 **Step 1:** Create a new WPF application or open an existing one.
 
@@ -42,7 +42,7 @@ Goji is licensed under The GNU GENERAL PUBLIC LICENSE v3, check the LICENSE file
 
 &emsp;&emsp;![Static Translation](https://raw.githubusercontent.com/MartinKuschnik/Goji/master/doc/pics/static_translation.png)
 
-##What does the ApplicationLanguage markup extension?
+## What does the ApplicationLanguage markup extension?
 
 This extension makes it very easy to synchronize the language of a control with the applicatuion language. The language of the control is automaticaly updated if you change the application language by using the extension method ```Application.SetCurrentUICulture(CultureInfo)```. This will update the formatting and the translations.
 
@@ -50,11 +50,11 @@ This extension makes it very easy to synchronize the language of a control with 
   ```
   <Control Language="{ApplicationLanguage}" />
   ```
-##Which kind of translation providers are supported?
+## Which kind of translation providers are supported?
 
 ...
   
-##Why multiple markup extension for translation purposes?
+## Why multiple markup extension for translation purposes?
 
 Localizing an application will create different kinds of situations with variant requirements. Therefore there are variant markup extensions with different levels of complexity.
 
