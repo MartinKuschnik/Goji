@@ -5,6 +5,9 @@ A framework to localize WPF applications.
 
 It's a framework that helps you to localize your WPF applications. Therefore it provides different kinds of markup extensions.
 
+&emsp;&emsp;![Example](https://raw.githubusercontent.com/MartinKuschnik/Goji/master/doc/pics/example.gif)
+
+
 ## Are there any requirements?
 
 Goji can be used for all WPF applications which targeting to the .Net  Framework 4 or any higher version. 
