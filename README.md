@@ -1,4 +1,4 @@
-# Goji  [![Build status](https://ci.appveyor.com/api/projects/status/i3w5vb5q8p19t70l?svg=true)](https://ci.appveyor.com/project/martinkuschnik/goji) [![NuGet Status](http://img.shields.io/nuget/v/Goji.svg?style=flat)](https://www.nuget.org/packages/Goji/)
+# Goji  [![build](https://github.com/MartinKuschnik/Goji/workflows/.NET%20Core/badge.svg)](https://github.com/MartinKuschnik/Goji/actions) [![NuGet Status](http://img.shields.io/nuget/v/Goji.svg?style=flat)](https://www.nuget.org/packages/Goji/)
 A framework to localize WPF applications.
 
 ## What's Goji?
@@ -37,7 +37,7 @@ Goji is licensed under The GNU GENERAL PUBLIC LICENSE v3, check the LICENSE file
 &emsp;&emsp;![RESX](https://raw.githubusercontent.com/MartinKuschnik/Goji/master/doc/pics/added_resx_files.PNG)
 
 
-**Step 6:** Set the translation provider for the UI element you'd like to localize.
+**Step 5:** Set the translation provider for the UI element you'd like to localize.
 
 &emsp;&emsp;![Set Translation Provider](https://raw.githubusercontent.com/MartinKuschnik/Goji/master/doc/pics/set_translation_provider.png)
 
