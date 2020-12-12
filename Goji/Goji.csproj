@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
@@ -7,14 +7,22 @@
     <Copyright>Copyright 2020 Martin Kuschnik</Copyright>
     <Description>A simple framework to localize wpf applications.</Description>
     <Authors>Martin Kuschnik</Authors>
-    <PackageLicenseFile></PackageLicenseFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/MartinKuschnik/Goji</PackageProjectUrl>
-    <PackageLicenseExpression>https://raw.githubusercontent.com/MartinKuschnik/Goji/master/LICENSE</PackageLicenseExpression>
+    <PackageLicenseExpression></PackageLicenseExpression>
     <PackageReleaseNotes>Migrated to .NET Core 3.1</PackageReleaseNotes>
     <Company>Martin Kuschnik</Company>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <OutputPath></OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Include=".\">
+    <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
