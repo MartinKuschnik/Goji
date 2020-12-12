@@ -29,4 +29,4 @@ jobs:
       run: dotnet pack Goji\Goji.csproj --configuration Release --output nuget-packages --no-build
     - name: Push with dotnet
       if: github.event.action == 'published'
-      run: dotnet nuget push nuget-packages/Goji.1.1.0.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push nuget-packages/Goji.*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
