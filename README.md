@@ -37,7 +37,7 @@ Goji is licensed under The GNU GENERAL PUBLIC LICENSE v3, check the LICENSE file
 &emsp;&emsp;![RESX](https://raw.githubusercontent.com/MartinKuschnik/Goji/master/doc/pics/added_resx_files.PNG)
 
 
-**Step 6:** Set the translation provider for the UI element you'd like to localize.
+**Step 5:** Set the translation provider for the UI element you'd like to localize.
 
 &emsp;&emsp;![Set Translation Provider](https://raw.githubusercontent.com/MartinKuschnik/Goji/master/doc/pics/set_translation_provider.png)
 
