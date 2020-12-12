@@ -1,79 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1E6BF72-6949-41B0-992F-0384D7539EA1}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Goji</RootNamespace>
-    <AssemblyName>Goji</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;VS_WPF_DESIGNER_TIMING_ISSUE_WORKAROUND</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Goji.XML</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;VS_WPF_DESIGNER_TIMING_ISSUE_WORKAROUND</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Goji.XML</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Version>1.1.0</Version>
+    <PackageTags>Goji language translation localized localization globalisation wpf windows c#</PackageTags>
+    <Copyright>Copyright 2020 Martin Kuschnik</Copyright>
+    <Description>A simple framework to localize wpf applications.</Description>
+    <Authors>Martin Kuschnik</Authors>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/MartinKuschnik/Goji</PackageProjectUrl>
+    <PackageLicenseExpression>https://raw.githubusercontent.com/MartinKuschnik/Goji/master/LICENSE</PackageLicenseExpression>
+    <PackageReleaseNotes>Migrated to .NET Core 3.1</PackageReleaseNotes>
+    <Company>Martin Kuschnik</Company>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
+    <None Include=".\">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ApplicationExtensions.cs" />
-    <Compile Include="Properties\AssemblyProperties.cs" />
-    <Compile Include="CultureChangedEventArgs.cs" />
-    <Compile Include="Data\ApplicationLanguageBindingSource.cs" />
-    <Compile Include="Data\ApplicationLanguageExtension.cs" />
-    <Compile Include="Data\BindingTranslationExtension.cs" />
-    <Compile Include="Data\LocalizationPropertyBindingSource.cs" />
-    <Compile Include="Data\DynamicTranslationExtension.cs" />
-    <Compile Include="Data\StaticTranslationExtension.cs" />
-    <Compile Include="Data\TranslationExtensionBase{T}.cs" />
-    <Compile Include="ITranslationProvider.cs" />
-    <Compile Include="ITranslationProviderExtensions.cs" />
-    <Compile Include="LocalizationProperties.cs" />
-    <Compile Include="Subscription{TEventHandler}.cs" />
-    <Compile Include="WeakDependencyPropertyEventBus.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TranslationConverter.cs" />
-    <Compile Include="TranslationProviders\ResxTranslationProvider.cs" />
-    <Compile Include="TranslationProviderTypeConverter.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

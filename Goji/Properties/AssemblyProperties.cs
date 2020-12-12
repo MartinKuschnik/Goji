@@ -13,6 +13,6 @@
         /// <summary>
         /// The copyright string.
         /// </summary>
-        internal const string Copyright = "© 2015 Martin Kuschnik";
+        internal const string Copyright = "© 2020 Martin Kuschnik";
     }
 }
