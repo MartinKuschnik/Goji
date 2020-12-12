@@ -22,8 +22,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Pack with dotnet
-      if: github.event == 'push'
+      if: github.event == 'release'
       run: dotnet pack Goji\Goji.csproj --configuration Release --output nuget-packages --no-build
     - name: Push with dotnet
-      if: github.event == 'push'
+      if: github.event == 'release'
       run: dotnet nuget push nuget-packages/Goji.1.1.0.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
