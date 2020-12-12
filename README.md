@@ -1,4 +1,4 @@
-# Goji  [![Build status](https://ci.appveyor.com/api/projects/status/i3w5vb5q8p19t70l?svg=true)](https://ci.appveyor.com/project/martinkuschnik/goji) [![NuGet Status](http://img.shields.io/nuget/v/Goji.svg?style=flat)](https://www.nuget.org/packages/Goji/)
+# Goji  [![build](https://github.com/MartinKuschnik/Goji/workflows/.NET%20Core/badge.svg)](https://github.com/MartinKuschnik/Goji/actions) [![NuGet Status](http://img.shields.io/nuget/v/Goji.svg?style=flat)](https://www.nuget.org/packages/Goji/)
 A framework to localize WPF applications.
 
 ## What's Goji?
