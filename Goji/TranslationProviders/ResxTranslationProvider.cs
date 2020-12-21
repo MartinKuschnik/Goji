@@ -8,7 +8,7 @@
     /// <summary>
     /// A translation provider which uses .resx-files as source.
     /// </summary>
-    internal sealed class ResxTranslationProvider : ITranslationProvider
+    public sealed class ResxTranslationProvider : ITranslationProvider
     {
         /// <summary>
         /// The internally used <see cref="ResourceManager"/>.
