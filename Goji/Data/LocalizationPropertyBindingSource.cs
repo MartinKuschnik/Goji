@@ -129,7 +129,7 @@
 
         private void OnDependencyPropertyEvent(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (e.Property == this.targetProperty)
+            if (e.Property == this.targetProperty && e.NewValue != null)
             {
                 PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
 
