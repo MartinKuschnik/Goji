@@ -15,7 +15,7 @@
         /// Contains all subscriptions.
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly Dictionary<Subscription<PropertyChangedCallback>, WeakReference> subscriptions = new Dictionary<Subscription<PropertyChangedCallback>, WeakReference>();
+        private readonly Dictionary<Subscription, WeakReference> subscriptions = new Dictionary<Subscription, WeakReference>();
 
         /// <summary>
         /// Register a <see cref="PropertyChangedCallback"/> for the event which occurs when a localization property has changed.
@@ -24,7 +24,7 @@
         /// <returns>The object to destroy the subscription.</returns>
         public IDisposable CreateSubscription(PropertyChangedCallback eventHandler)
         {
-            Subscription<PropertyChangedCallback> subscription = new Subscription<PropertyChangedCallback>(eventHandler);
+            Subscription subscription = new Subscription();
 
             subscription.Disposed += this.OnSubscriptionDisposed;
 
@@ -63,9 +63,7 @@
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void OnSubscriptionDisposed(object sender, EventArgs e)
         {
-            Subscription<PropertyChangedCallback> subscription = sender as Subscription<PropertyChangedCallback>;
-
-            if (sender != null)
+            if (sender is Subscription subscription)
             {
                 subscription.Disposed -= this.OnSubscriptionDisposed;
 
