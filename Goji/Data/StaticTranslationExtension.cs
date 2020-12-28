@@ -48,9 +48,7 @@
 
             if (provideValueTarget != null)
             {
-                DependencyObject targetObject = provideValueTarget.TargetObject as DependencyObject;
-
-                if (targetObject != null)
+                if (provideValueTarget.TargetObject is DependencyObject targetObject)
                 {
                     var translator = this.TranslationProvider ?? targetObject.GetValue(LocalizationProperties.TranslationProviderProperty) as ITranslationProvider;
 
@@ -73,6 +71,10 @@
                         return dynamicOne.ProvideValue(serviceProvider);
                     }
 #endif
+                }
+                else if(provideValueTarget.TargetObject is Setter)
+                {
+                    return this;
                 }
             }
 

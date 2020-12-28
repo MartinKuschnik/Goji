@@ -47,9 +47,7 @@
 
             if (provideValueTarget != null)
             {
-                var targetObject = provideValueTarget.TargetObject as DependencyObject;
-
-                if (targetObject != null)
+                if (provideValueTarget.TargetObject is DependencyObject targetObject)
                 {
                     var bindingSource = new LocalizationPropertyBindingSource(LocalizationProperties.TranslationProviderProperty, targetObject);
 
@@ -58,6 +56,10 @@
                     binding.Converter = new TranslationConverter(targetObject, this.TranslationProvider, this.Language, this.StringFormat, this.FallbackValue);
 
                     return binding.ProvideValue(serviceProvider);
+                }
+                else if (provideValueTarget.TargetObject is Setter)
+                {
+                    throw new NotSupportedException($"Binding translations not supported for setter values.");
                 }
             }
 
