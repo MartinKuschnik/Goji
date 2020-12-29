@@ -105,21 +105,14 @@
 
                 if (usedTranslator == null)
                 {
-#if VS_WPF_DESIGNER_TIMING_ISSUE_WORKAROUND // see: http://connect.microsoft.com/VisualStudio/feedback/details/816195/attached-properties-not-working-on-design-time
-
-                    if (DesignerProperties.GetIsInDesignMode(this.targetObject))
+                    if (string.IsNullOrEmpty(this.stringFormat))
                     {
-                        if (string.IsNullOrEmpty(this.stringFormat))
-                        {
-                            return fallbackValue;
-                        }
-                        else
-                        {
-                            return string.Format(this.stringFormat, fallbackValue);
-                        }
+                        return fallbackValue;
                     }
-#endif
-                    throw new Exception("No translator found.");
+                    else
+                    {
+                        return string.Format(this.stringFormat, fallbackValue);
+                    }
                 }
             }
 

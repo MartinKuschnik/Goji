@@ -72,7 +72,7 @@
                     }
 #endif
                 }
-                else if(provideValueTarget.TargetObject is Setter)
+                else
                 {
                     return this;
                 }

@@ -57,9 +57,9 @@
 
                     return binding.ProvideValue(serviceProvider);
                 }
-                else if (provideValueTarget.TargetObject is Setter)
+                else
                 {
-                    throw new NotSupportedException($"Binding translations not supported for setter values.");
+                    return this;
                 }
             }
 

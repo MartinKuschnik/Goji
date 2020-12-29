@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>1.1.4</Version>
+    <Version>1.1.5</Version>
     <PackageTags>Goji language translation localized localization globalisation wpf windows c#</PackageTags>
     <Copyright>Copyright 2020 Martin Kuschnik</Copyright>
     <Description>A simple framework to localize wpf applications.</Description>
