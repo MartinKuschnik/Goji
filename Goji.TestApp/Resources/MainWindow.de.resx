@@ -177,4 +177,16 @@
   <data name="_aBindingTranslatedValue1" xml:space="preserve">
     <value>gebunden 1</value>
   </data>
+  <data name="_setter_vale" xml:space="preserve">
+    <value>gebunden via Setter-Value</value>
+  </data>
+  <data name="_checked" xml:space="preserve">
+    <value>markiert</value>
+  </data>
+  <data name="_setterValue" xml:space="preserve">
+    <value>Setter-Test</value>
+  </data>
+  <data name="_unchecked" xml:space="preserve">
+    <value>nicht markiert</value>
+  </data>
 </root>

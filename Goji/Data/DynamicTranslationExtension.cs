@@ -42,9 +42,9 @@
         {
             this.ThrowIfKeyNotSpecified();
 
-            MultiBinding binding = new MultiBinding();
+            MultiBinding binding = new MultiBinding() { Mode = BindingMode.OneWay };
 
-            binding.Bindings.Add(new Binding() { Source = this.Key });
+            binding.Bindings.Add(new Binding() { Source = this.Key, Mode = BindingMode.OneWay });
 
             IProvideValueTarget provideValueTarget = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
 
@@ -57,6 +57,13 @@
                     binding.Bindings.Add(bindingSource.Binding);
 
                     binding.Converter = new TranslationConverter(targetObject, this.TranslationProvider, this.Language, this.StringFormat, this.FallbackValue);
+
+                    return binding.ProvideValue(serviceProvider);
+                }
+                else if (provideValueTarget.TargetObject is Setter)
+                {
+                    binding.Bindings.Add(new Binding() { RelativeSource = new RelativeSource() { Mode = RelativeSourceMode.Self } });
+                    binding.Converter = new TranslationConverter(null, this.TranslationProvider, this.Language, this.StringFormat, this.FallbackValue);
 
                     return binding.ProvideValue(serviceProvider);
                 }

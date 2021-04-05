@@ -1,11 +1,9 @@
 ﻿namespace Goji
 {
     using System;
-    using System.ComponentModel;
     using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
-    using System.Reflection;
     using System.Windows;
     using System.Windows.Data;
     using System.Windows.Markup;
@@ -42,7 +40,7 @@
         /// or the <see cref="fixedLanguage"/> field is <c>null</c>.
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private readonly DependencyObject targetObject;
+        private readonly DependencyObject fixedTargetObject;
 
         /// <summary>
         /// A composite format string. {0} will be replaced with the provided translation.
@@ -55,7 +53,7 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="TranslationConverter"/> class.
         /// </summary>
-        /// <param name="targetObject">
+        /// <param name="fixedTargetObject">
         /// This is the object will be used to determinate the used translation provider and the target language if the <paramref name="fixedTranslator"/>
         /// or the <paramref name="fixedLanguage"/> parameter is <c>null</c>.
         /// </param>
@@ -70,15 +68,10 @@
         /// </param>
         /// <param name="stringFormat">A composite format string. {0} will be replaced with the provided translation.</param>
         /// <param name="fallbackValue">This is the fallback value which is used if there is no translation for the given language.</param>
-        /// <exception cref="ArgumentNullException">The <paramref name="targetObject"/> parameter is <c>null</c>.</exception>
-        internal TranslationConverter(DependencyObject targetObject, ITranslationProvider fixedTranslator = null, XmlLanguage fixedLanguage = null, string stringFormat = null, string fallbackValue = null)
+        /// <exception cref="ArgumentNullException">The <paramref name="fixedTargetObject"/> parameter is <c>null</c>.</exception>
+        internal TranslationConverter(DependencyObject fixedTargetObject, ITranslationProvider fixedTranslator = null, XmlLanguage fixedLanguage = null, string stringFormat = null, string fallbackValue = null)
         {
-            if (targetObject == null)
-            {
-                throw new ArgumentNullException(MethodBase.GetCurrentMethod().GetParameters()[0].Name);
-            }
-
-            this.targetObject = targetObject;
+            this.fixedTargetObject = fixedTargetObject;
             this.fixedTranslator = fixedTranslator;
             this.fixedLanguage = fixedLanguage;
             this.stringFormat = stringFormat;
@@ -101,27 +94,21 @@
 
             if (usedTranslator == null)
             {
-                usedTranslator = this.targetObject.GetValue(LocalizationProperties.TranslationProviderProperty) as ITranslationProvider;
+                usedTranslator = this.fixedTargetObject.GetValue(LocalizationProperties.TranslationProviderProperty) as ITranslationProvider;
 
                 if (usedTranslator == null)
                 {
                     if (string.IsNullOrEmpty(this.stringFormat))
-                    {
                         return fallbackValue;
-                    }
                     else
-                    {
                         return string.Format(this.stringFormat, fallbackValue);
-                    }
                 }
             }
 
             if (this.fixedLanguage != null)
-            {
                 usedCulture = new CultureInfo(this.fixedLanguage.ToString());
-            }
 
-            return usedTranslator.ProvideTranslation(value.ToString(), usedCulture, fallbackValue, this.stringFormat);
+            return this.Translate(value.ToString(), culture, null);
         }
 
         /// <summary>
@@ -149,11 +136,9 @@
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (!values.Any() || (!(values[0] is string) && values[0].GetType().FullName == "MS.Internal.NamedObject"))
-            {
                 return null;
-            }
 
-            return this.Convert(values[0], targetType, parameter, culture);
+            return this.Translate(values[0].ToString(), culture, values[1] as DependencyObject);
         }
 
         /// <summary>
@@ -168,6 +153,32 @@
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException();
+        }
+
+        private string Translate(string translationKey, CultureInfo culture, DependencyObject targetObject = null)
+        {
+            ITranslationProvider usedTranslator = this.fixedTranslator;
+            CultureInfo usedCulture = culture;
+            DependencyObject usedTargetObject = this.fixedTargetObject ?? targetObject;
+            string fallbackValue = this.fallbackValue ?? translationKey;
+
+            if (usedTranslator == null)
+            {
+                usedTranslator = usedTargetObject.GetValue(LocalizationProperties.TranslationProviderProperty) as ITranslationProvider;
+
+                if (usedTranslator == null)
+                {
+                    if (string.IsNullOrEmpty(this.stringFormat))
+                        return fallbackValue;
+                    else
+                        return string.Format(this.stringFormat, fallbackValue);
+                }
+            }
+
+            if (this.fixedLanguage != null)
+                usedCulture = new CultureInfo(this.fixedLanguage.ToString());
+
+            return usedTranslator.ProvideTranslation(translationKey, usedCulture, fallbackValue, this.stringFormat);
         }
     }
 }

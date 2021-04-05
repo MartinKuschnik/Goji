@@ -13,7 +13,7 @@
         MinHeight="300"
         Width="725"
         MinWidth="700">
-    <Grid>
+    <Grid d:DataContext="{d:DesignInstance Type=VMs:MainViewModel}">
         <Grid.DataContext>
             <VMs:MainViewModel />
         </Grid.DataContext>
@@ -41,6 +41,40 @@
 						Margin="5">
                         <TextBlock Text="{DynamicTranslation _fallbackValue, StringFormat=- {0}:}" />
                         <TextBlock Text="{DynamicTranslation undefinene translation key, FallbackValue=FallbackValue}"  Margin="10,0,0,0"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+						Margin="5">
+                        <StackPanel.Resources>
+
+                            <Style x:Key="checkbox_style" TargetType="{x:Type CheckBox}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter Property="Content" Value="{DynamicTranslation _checked}" />
+                                    </Trigger>
+                                    <Trigger Property="IsChecked" Value="False">
+                                        <Setter Property="Content" Value="{DynamicTranslation _unchecked}" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="{DynamicTranslation _setterValue, StringFormat=- {0} 1:}" />
+                        <CheckBox VerticalAlignment="Center" Margin="5,0" Style="{StaticResource checkbox_style}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+						Margin="5">
+                        <StackPanel.Resources>
+                            <Style x:Key="text_style" TargetType="{x:Type TextBlock}">
+                                <Setter Property="Text" Value="{DynamicTranslation Key=_unchecked}" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsChecked, ElementName=checkbox}" Value="True">
+                                        <Setter Property="Text" Value="{DynamicTranslation Key=_checked}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="{DynamicTranslation _setterValue, StringFormat=- {0} 2:}" />
+                        <CheckBox x:Name="checkbox" VerticalAlignment="Center" Margin="5,0,0,0" />
+                        <TextBlock VerticalAlignment="Center" Margin="5,0" Style="{StaticResource text_style}" />
                     </StackPanel>
                 </StackPanel>
             </TabItem>
@@ -96,7 +130,7 @@
 
         <!-- Language-Switch -->
         <StackPanel HorizontalAlignment="Right">
-            <ComboBox Width="100" ItemsSource="{Binding Languages, Mode=OneTime}" SelectedItem="{Binding Language}">
+            <ComboBox Width="100" ItemsSource="{Binding Languages, Mode=OneTime}" SelectedItem="{Binding Language, FallbackValue=de}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <ContentPresenter Content="{BindingTranslation Key={Binding ., Mode=OneWay}}" />
