@@ -1,6 +1,7 @@
 ﻿namespace Goji.Data
 {
     using System;
+    using System.ComponentModel;
     using System.Windows;
     using System.Windows.Data;
     using System.Windows.Markup;
@@ -54,6 +55,9 @@
                     binding.Bindings.Add(bindingSource.Binding);
 
                     binding.Converter = new TranslationConverter(targetObject, this.TranslationProvider, this.Language, this.StringFormat, this.FallbackValue);
+
+                    if (DesignerProperties.GetIsInDesignMode(targetObject))
+                        return string.IsNullOrEmpty(this.StringFormat) ? this.FallbackValue : string.Format(this.StringFormat, this.FallbackValue);
 
                     return binding.ProvideValue(serviceProvider);
                 }
