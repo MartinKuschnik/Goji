@@ -14,7 +14,7 @@ Goji can be used for all WPF applications which targeting to the .Net  Framework
 
 ## License
 
-Goji is licensed under The GNU GENERAL PUBLIC LICENSE v3, check the LICENSE file for details.
+Goji is licensed under MIT License, check the [LICENSE](https://github.com/MartinKuschnik/Goji/blob/master/LICENSE) file for details.
 
 ## Installation
 
