@@ -2,15 +2,15 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>1.1.5</Version>
-    <PackageTags>Goji language translation localized localization globalisation wpf windows c#</PackageTags>
-    <Copyright>Copyright 2020 Martin Kuschnik</Copyright>
+    <Version>1.2.0</Version>
+    <PackageTags>Goji language translation localized localization globalisation wpf windows c# dot net core</PackageTags>
+    <Copyright>Copyright 2021 Martin Kuschnik</Copyright>
     <Description>A simple framework to localize wpf applications.</Description>
     <Authors>Martin Kuschnik</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/MartinKuschnik/Goji</PackageProjectUrl>
     <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageReleaseNotes>Fixed a small memory leak and an issue that occurs when a translation provider gets disposed.</PackageReleaseNotes>
+    <PackageReleaseNotes>Improved DynamicTranslationExtension to wrok with setters.</PackageReleaseNotes>
     <Company>Martin Kuschnik</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
